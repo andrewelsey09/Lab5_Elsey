@@ -33,6 +33,7 @@ public class AndroidAdapter  extends ArrayAdapter<Android> {
         String version = getItem(position).getVersion();
         String APILevel = getItem(position).getAPILevel();
         String date = getItem(position).getDate();
+        String shortMessage = getItem(position).getShortMessage();
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResources,parent,false);

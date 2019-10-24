@@ -2,14 +2,15 @@ package com.example.lab4_elsey;
 
 public class Android {
     int logo;
-    String name,version,date,APILevel;
+    String name,version,date,APILevel,shortMessage;
 
-    public Android(int logo, String name, String version, String APILevel, String date) {
+    public Android(int logo, String name, String version, String APILevel, String date, String shortMessage) {
         this.logo = logo;
         this.name = name;
         this.version = version;
         this.date = date;
         this.APILevel=APILevel;
+        this.shortMessage=shortMessage;
     }
 
     public int getLogo() {
@@ -30,5 +31,9 @@ public class Android {
 
     public String getAPILevel(){
         return APILevel;
+    }
+
+    public String getShortMessage(){
+        return shortMessage;
     }
 }

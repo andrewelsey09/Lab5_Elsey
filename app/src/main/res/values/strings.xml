@@ -72,4 +72,39 @@
         <item>August 6, 2018</item>
         <item>September 3, 2019</item>
     </string-array>
+
+    <string-array name="androidMessage">
+        <item>Android "Cupcake" (version 1.5) is the third version of Android developed by Google,
+            a major platform release deployable to Android-powered handsets
+            starting in April 2009, that is no longer supported. </item>
+        <item>Android "Donut" is the fourth version of the open source
+            Android mobile operating system developed by Google that is no longer supported. </item>
+        <item>Android "Eclair" is a codename of the Android mobile operating system developed by
+            Google and the fifth operating system for Android, and for the no-longer supported
+            versions 2.0 to 2.1. </item>
+        <item>Android "Froyo" is the sixth version of Android and is a codename of the Android
+            mobile operating system developed by Google, spanning versions between 2.2 and 2.2.3.</item>
+        <item>Android "Gingerbread" is the seventh version of Android, a codename of the Android mobile
+            operating system developed by Google and released in December 2010, for versions that are no longer supported.</item>
+        <item>Android "Honeycomb" is the codename for the eighth version of Android, designed for devices with larger screen
+            sizes, particularly tablets. </item>
+        <item>OAndroid "Ice Cream Sandwich" is the ninth version of the Android mobile operating system developed by Google.
+            Unveiled on October 19, 2011, Android 4.0 builds upon the significant changes made by the tablet-only release Android
+            Honeycomb, in an effort to create a unified platform for both smartphones and tablets.</item>
+        <item>Android "Jelly Bean" is the tenth version of Android and the codename given to three major
+            point releases of the Android mobile operating system developed by Google, spanning versions between 4.1 and 4.3.1.</item>
+        <item>Android "KitKat" is a codename for the Android mobile operating system and the eleventh version of Android. </item>
+        <item>Android "Lollipop" (codenamed Android L during development) is the fifth major version of the Android mobile
+            operating system developed by Google, spanning versions between 5.0 and 5.1.1.</item>
+        <item>Android "Marshmallow" (codenamed Android M during development) is the sixth major
+            version of the Android operating system and the 13th version of Android.</item>
+        <item>Android "Nougat" (codenamed Android N during development) is the seventh major
+            version and 14th original version of the Android operating system. </item>
+        <item>Android "Oreo" (codenamed Android O during development) is the eighth major
+            release and the 15th version of the Android mobile operating system.</item>
+        <item>Android Pie (codenamed Android P during development) is the ninth major release
+            and the 16th version of the Android mobile operating system.</item>
+        <item>Android 10 is the tenth major release and the 17th version of the Android mobile operating system.
+            It was released on September 3, 2019.</item>
+    </string-array>
 </resources>
