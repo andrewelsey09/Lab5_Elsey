@@ -5,10 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -41,7 +49,48 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        final File folder = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
+        File file = new File(folder, "android.txt");
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            String choice = "Version Name: " + androidList.get(i).getName() +" "+androidList.get(i).getDate();
+            fos.write(choice.getBytes());
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            dialog.setTitle(androidList.get(i).getName());
+            dialog.setIcon(androidList.get(i).getLogo());
+            dialog.setMessage(androidList.get(i).getShortMessage());
+            dialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                    File file = new File(folder, "android.txt");
+                    StringBuilder text = new StringBuilder();
+                    try {
+                        BufferedReader br = new BufferedReader(new FileReader(file));
+                        String line;
+
+                        while ((line = br.readLine()) != null){
+                            text.append(line);
+                            text.append('\n');
+                        }
+                        br.close();
+
+                        Toast.makeText(MainActivity.this,text.toString(),Toast.LENGTH_LONG).show();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            dialog.create().show();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        /*AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle(androidList.get(i).getName());
         dialog.setIcon(androidList.get(i).getLogo());
         dialog.setMessage(androidList.get(i).getShortMessage());
@@ -51,6 +100,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 dialog.dismiss();
             }
         });
-        dialog.create().show();
+        dialog.create().show(); */
     }
 }
